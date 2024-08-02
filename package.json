@@ -1,0 +1,17 @@
+{
+  "name": "projectplantdiseaseclassification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./static/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./static/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "tailwindcss": "^3.4.3"
+  }
+}

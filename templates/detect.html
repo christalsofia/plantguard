@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/aba0a92cd0.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='assets/logo.png')}}"
+      type="image/x-icon"
+    />
+    <title>PlantGuard</title>
+  </head>
+  <body class="min-w-[375px]">
+    <!-- Home -->
+    <div id="home">
+      <!-- Navbar -->
+      <nav class="mx-auto">
+        <div class="flex items-center justify-between bg-salem-700 p-5 px-10">
+          <!-- Logo -->
+          <div>
+            <img src="{{ url_for('static', filename='assets/logo.png')}}" alt="" class="w-12" />
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 md:flex">
+            <a
+              href="index.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >About</a
+            >
+            <a
+              href="history.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >History</a
+            >
+          </div>
+          <!-- Button -->
+          <a
+            href="detect.html"
+            class="hidden rounded-full bg-white p-2 px-6 text-salem-700 border-2 border-white hover:bg-salem-700 hover:text-white hover:border-white hover:duration-200 md:block"
+            >Detect now!</a
+          >
+          <!-- Hamburger Icon -->
+          <i id="menu" class="fa-solid fa-bars text-white cursor-pointer text-2xl md:hidden"></i>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+          <div
+            id="menu-box"
+            class="transition-right fixed top-0 right-0 z-[2] hidden h-screen w-[40%] flex-col space-y-8 bg-salem-800 p-6 pt-11 font-medium text-white duration-200"
+          >
+            <i id="menu-x" class="fa-solid fa-xmark fa-xl cursor-pointer"></i>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="history.html">History</a>
+            <a href="detect.html" class="rounded-full bg-white p-2 text-center text-salem-700"
+              >Detect now!</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Body -->
+      <div class="flex min-h-[88vh] flex-col justify-center items-center p-10 md:px-12 md:p-10">
+        <div class="border-salem-700 border-2 p-3 px-5 rounded-full mb-5">
+          <form id="upload-file" method="post" enctype="multipart/form-data">
+            <input
+              type="file"
+              name="file"
+              id="imageUpload"
+              accept=".png, .jpg, .jpeg"
+              onchange="previewImage(event)"
+              class="w-60 md:w-80"
+            />
+          </form>
+        </div>
+        <div class="image-section hidden">
+          <img id="imagePreview" class="w-[200px] h-[200px]" />
+          <div class="mt-5 flex items-center justify-center">
+            <button
+              type="button"
+              id="btn-predict"
+              class="rounded-lg inline-block bg-salem-700 p-2 px-6 text-white text-xs border-2 border-salem-700 w-[200px] md:text-base hover:bg-white hover:text-salem-700 hover:duration-200"
+            >
+              Detect!
+            </button>
+          </div>
+        </div>
+        <div
+          class="loader ease-linear rounded-full border-4 border-t-4 border-t-salem-700 border-gray-200 h-12 w-12 animate-spin hidden"
+        ></div>
+        <p id="result">
+          <span> </span>
+        </p>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

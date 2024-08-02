@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/aba0a92cd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='assets/logo.png') }}"
+      type="image/x-icon"
+    />
+    <title>PlantGuard</title>
+  </head>
+  <body class="min-w-[375px]">
+    <!-- Home -->
+    <div id="home">
+      <!-- Navbar -->
+      <nav class="mx-auto">
+        <div class="flex items-center justify-between bg-salem-700 p-5 px-10">
+          <!-- Logo -->
+          <div>
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="" class="w-12" />
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 md:flex">
+            <a
+              href="index.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >About</a
+            >
+            <a
+              href="history.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >History</a
+            >
+          </div>
+          <!-- Button -->
+          <a
+            href="detect.html"
+            class="hidden rounded-full bg-white p-2 px-6 text-salem-700 border-2 border-white hover:bg-salem-700 hover:text-white hover:border-white hover:duration-200 md:block"
+            >Detect now!</a
+          >
+          <!-- Hamburger Icon -->
+          <i id="menu" class="fa-solid fa-bars text-white cursor-pointer text-2xl md:hidden"></i>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+          <div
+            id="menu-box"
+            class="transition-right fixed top-0 right-0 z-[2] hidden h-screen w-[40%] flex-col space-y-8 bg-salem-800 p-6 pt-11 font-medium text-white duration-200"
+          >
+            <i id="menu-x" class="fa-solid fa-xmark fa-xl cursor-pointer"></i>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="history.html">History</a>
+            <a href="detect.html" class="rounded-full bg-white p-2 text-center text-salem-700"
+              >Detect now!</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Body -->
+      <div
+        class="flex min-h-[88vh] flex-col justify-center items-start p-10 md:p-20 bg-cover"
+        style="background-image: url('{{ url_for('static', filename='assets/background-image.png') }}')"
+      >
+        <p class="mb-2 text-salem-700 text-3xl font-black md:text-5xl lg:text-7xl">PlantGuard:</p>
+        <p class="text-salem-700 text-sm md:text-xl lg:text-3xl">
+          A Plant Leaf Disease Recognition System
+        </p>
+        <p class="mb-3 text-salem-700 text-sm md:text-xl lg:text-3xl">
+          using Convolutional Neural Network
+        </p>
+        <a
+          href="detect.html"
+          class="rounded-full inline-block bg-salem-700 p-2 px-6 text-white text-xs border-2 border-salem-700 md:text-base hover:bg-white hover:text-salem-700 hover:duration-200"
+          >Detect now!</a
+        >
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

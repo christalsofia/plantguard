@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/aba0a92cd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='assets/logo.png') }}"
+      type="image/x-icon"
+    />
+    <title>PlantGuard</title>
+  </head>
+  <body class="min-w-[375px]">
+    <!-- Home -->
+    <div id="home">
+      <!-- Navbar -->
+      <nav class="mx-auto">
+        <div class="flex items-center justify-between bg-salem-700 p-5 px-10">
+          <!-- Logo -->
+          <div>
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="" class="w-12" />
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 md:flex">
+            <a
+              href="index.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >About</a
+            >
+            <a
+              href="history.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >History</a
+            >
+          </div>
+          <!-- Button -->
+          <a
+            href="detect.html"
+            class="hidden rounded-full bg-white p-2 px-6 text-salem-700 border-2 border-white hover:bg-salem-700 hover:text-white hover:border-white hover:duration-200 md:block"
+            >Detect now!</a
+          >
+          <!-- Hamburger Icon -->
+          <i id="menu" class="fa-solid fa-bars text-white cursor-pointer text-2xl md:hidden"></i>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+          <div
+            id="menu-box"
+            class="transition-right fixed top-0 right-0 z-[2] hidden h-screen w-[40%] flex-col space-y-8 bg-salem-800 p-6 pt-11 font-medium text-white duration-200"
+          >
+            <i id="menu-x" class="fa-solid fa-xmark fa-xl cursor-pointer"></i>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="history.html">History</a>
+            <a href="detect.html" class="rounded-full bg-white p-2 text-center text-salem-700"
+              >Detect now!</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Body -->
+      <div class="flex flex-col min-h-[88vh] justify-center items-center p-10">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th class="pr-10 text-salem-700">Filename</th>
+                <th class="text-salem-700">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in history %}
+              <tr>
+                <td class="text-center pr-10 py-2 hover:underline hover:text-salem-700">
+                  <a
+                    href="{{ url_for('static', filename='uploads/' + row.filename) }}"
+                    target="_blank"
+                    >{{ row.filename }}</a
+                  >
+                </td>
+                <td
+                  class="text-center py-2 font-medium {% if row.status == 'Powdery' %} text-gray-500 {% elif row.status == 'Rust' %} text-yellow-500 {% else %} text-salem-600 {% endif %}"
+                >
+                  {{ row.status }}
+                </td>
+              </tr>
+              {% else %}
+              <tr>
+                <td colspan="2" class="text-center py-2 font-bold">History is empty.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% if history %}
+        <form action="/delete_history" method="post">
+          <button
+            class="m-2 p-3 px-5 font-bold bg-salem-700 border-2 border-salem-700 text-white rounded-full hover:bg-red-600 hover:border-red-600"
+            type="submit"
+          >
+            Delete History
+          </button>
+        </form>
+        {% endif %}
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

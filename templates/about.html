@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/aba0a92cd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='assets/logo.png') }}"
+      type="image/x-icon"
+    />
+    <title>PlantGuard</title>
+  </head>
+  <body class="min-w-[375px]">
+    <!-- Home -->
+    <div id="home">
+      <!-- Navbar -->
+      <nav class="mx-auto">
+        <div class="flex items-center justify-between bg-salem-700 p-5 px-10">
+          <!-- Logo -->
+          <div>
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="" class="w-12" />
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 md:flex">
+            <a
+              href="index.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >About</a
+            >
+            <a
+              href="history.html"
+              class="text-white relative after:absolute after:-bottom-[5px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:duration-200 hover:after:w-[100%]"
+              >History</a
+            >
+          </div>
+          <!-- Button -->
+          <a
+            href="detect.html"
+            class="hidden rounded-full bg-white p-2 px-6 text-salem-700 border-2 border-white hover:bg-salem-700 hover:text-white hover:border-white hover:duration-200 md:block"
+            >Detect now!</a
+          >
+          <!-- Hamburger Icon -->
+          <i id="menu" class="fa-solid fa-bars text-white cursor-pointer text-2xl md:hidden"></i>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+          <div
+            id="menu-box"
+            class="transition-right fixed top-0 right-0 z-[2] hidden h-screen w-[40%] flex-col space-y-8 bg-salem-800 p-6 pt-11 font-medium text-white duration-200"
+          >
+            <i id="menu-x" class="fa-solid fa-xmark fa-xl cursor-pointer"></i>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="history.html">History</a>
+            <a href="detect.html" class="rounded-full bg-white p-2 text-center text-salem-700"
+              >Detect now!</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!-- Body -->
+      <div class="flex min-h-[88vh] flex-col justify-center items-start p-10 md:px-12 space-y-10">
+        <div class="flex items-center md:space-x-5">
+          <img
+            src="{{ url_for('static', filename='assets/logo.png') }}"
+            alt=""
+            class="hidden bg-salem-700 rounded-full p-3 w-20 md:block"
+          />
+          <div class="text-justify border-salem-700 border-2 p-5 rounded-3xl space-y-5">
+            <p>
+              Welcome to <b>PlantGuard</b>, a plant leaf disease recognition system. The website
+              harnesses the power of <b>Convolutional Neural Network (CNN) algorithm</b> to detect
+              plant conditions. Simply upload a photo of a plant leaf and get the status almost
+              immediately, whether it is <b>healthy</b>, affected by <b>powdery mildew</b>, or
+              <b>rust</b>. With PlantGuard, you can keep your plants thriving and disease-free with
+              ease.
+            </p>
+            <p class="text-sm">
+              <i
+                >** The system is not 100% accurate yet and may occasionally detect the most
+                prominent condition it identifies.</i
+              >
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-5 md:flex-row md:space-y-0 md:space-x-5">
+          <div class="bg-salem-600 p-5 rounded-3xl">
+            <img
+              src="{{ url_for('static', filename='assets/healthy.jpg') }}"
+              alt=""
+              class="mb-2 rounded-xl"
+            />
+            <p class="mb-2 text-center"><b>Healthy</b></p>
+            <p class="mb-2 text-justify">
+              A healthy plant is one that is free from disease, with vibrant green leaves, strong
+              stems, and vigorous growth.
+            </p>
+            <p>To maintain:</p>
+            <ul class="list-disc list-inside">
+              <li>Ensure proper watering.</li>
+              <li>Provide adequate sunlight</li>
+              <li>Maintain proper nutrition</li>
+              <li>Monitor for pests and diseases</li>
+            </ul>
+          </div>
+          <div class="bg-gray-200 p-5 rounded-3xl">
+            <img
+              src="{{ url_for('static', filename='assets/powdery.jpg') }}"
+              alt=""
+              class="mb-2 rounded-xl"
+            />
+            <p class="mb-2 text-center"><b>Powdery</b></p>
+            <p class="mb-2 text-justify">
+              Powdery mildew is a fungal disease that appears as a white or gray powdery coating. It
+              is caused by various species of fungi.
+            </p>
+            <p>Remedies:</p>
+            <ul class="list-disc list-inside">
+              <li>Prune affected plant parts</li>
+              <li>Improve air circulation</li>
+              <li>Apply fungicides</li>
+              <li>Water at the base of the plant</li>
+            </ul>
+          </div>
+          <div class="bg-yellow-500 p-5 rounded-3xl">
+            <img
+              src="{{ url_for('static', filename='assets/rust.jpg') }}"
+              alt=""
+              class="mb-2 rounded-xl"
+            />
+            <p class="mb-2 text-center"><b>Rust</b></p>
+            <p class="mb-2 text-justify">
+              Rust is a fungal disease that appears as orange or reddish-brown spots. It is caused
+              by various species of fungi.
+            </p>
+            <p>Remedies:</p>
+            <ul class="list-disc list-inside">
+              <li>Remove affected plant parts</li>
+              <li>Improve air circulation</li>
+              <li>Apply fungicides</li>
+              <li>Practice good garden hygiene</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
