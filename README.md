@@ -1,5 +1,7 @@
 # PlantGuard: A Plant Leaf Disease Recognition System using Convolutional Neural Network
 
+## Overview
+
 The model used in this project was trained using [Plant Disease Recognition Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset/). To run this locally, follow the instructions below.
 
 ## Prerequisite
@@ -8,7 +10,7 @@ The model used in this project was trained using [Plant Disease Recognition Data
 
 ## Local Setup
 
-1. Clone the folder:
+1. Clone the repository from GitHub:
 
    ```
    git clone https://github.com/christalsofia/project-plantguard.git
@@ -33,3 +35,4 @@ The model used in this project was trained using [Plant Disease Recognition Data
    ```
    python main.py
    ```
+
