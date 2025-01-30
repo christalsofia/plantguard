@@ -22,7 +22,7 @@ The model used in this project was trained using [Plant Disease Recognition Data
    cd project-plantguard
    ```
 
-3. Install python packages required:
+3. Install Python packages required:
 
    ```
    pip install -r requirements.txt
@@ -30,7 +30,7 @@ The model used in this project was trained using [Plant Disease Recognition Data
 
 4. Wait for the installation to finish.
 
-5. Run the python file:
+5. Run the Python file:
 
    ```
    python main.py
