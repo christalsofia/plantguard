@@ -8,23 +8,27 @@ The model used in this project was trained using [Plant Disease Recognition Data
 
 ## Local Setup
 
-1. Download the folder
+1. Clone the folder
 
-2. Using the terminal, navigate to the folder
+   ```
+   git clone https://github.com/christalsofia/project-plantguard.git
+   ```
+
+2. Using the terminal, navigate to the folder:
 
    ```
    cd project-plantguard
    ```
 
-3. Install python packages required
+3. Install python packages required:
 
    ```
    pip install -r requirements.txt
    ```
 
-4. Wait for the installation to finish
+4. Wait for the installation to finish.
 
-5. Run the python file
+5. Run the python file:
 
    ```
    python main.py
