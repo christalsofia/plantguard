@@ -8,7 +8,7 @@ The model used in this project was trained using [Plant Disease Recognition Data
 
 ## Local Setup
 
-1. Clone the folder
+1. Clone the folder:
 
    ```
    git clone https://github.com/christalsofia/project-plantguard.git
