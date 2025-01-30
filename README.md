@@ -2,7 +2,7 @@
 
 ## Overview
 
-The model used in this project was trained using [Plant Disease Recognition Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset/). To run this locally, follow the instructions below.
+A plant leaf disease recognition system that harnesses the power of Convolutional Neural Network (CNN) algorithm to detect plant conditions. The model used in this project was trained using [Plant Disease Recognition Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset/).
 
 ## Prerequisite(s)
 
