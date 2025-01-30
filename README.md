@@ -6,7 +6,7 @@ A plant leaf disease recognition system that harnesses the power of Convolutiona
 
 ## Prerequisite(s)
 
-- Python
+- [Python](https://www.python.org/downloads/)
 
 ## Local Setup
 
