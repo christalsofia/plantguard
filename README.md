@@ -4,7 +4,7 @@
 
 The model used in this project was trained using [Plant Disease Recognition Dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset/). To run this locally, follow the instructions below.
 
-## Prerequisite
+## Prerequisite(s)
 
 - Python
 
