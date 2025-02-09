@@ -13,13 +13,13 @@ A plant leaf disease recognition system that harnesses the power of Convolutiona
 1. Clone the repository from GitHub:
 
    ```
-   git clone https://github.com/christalsofia/project-plantguard.git
+   git clone https://github.com/christalsofia/plantguard.git
    ```
 
 2. Using the terminal, navigate to the folder:
 
    ```
-   cd project-plantguard
+   cd plantguard
    ```
 
 3. Install Python packages required:
